@@ -30,7 +30,7 @@ app.use('/uploads', express.static('uploads'));
 
 const index = require("./routes/index")
 
-app.use("", index)
+app.use("/", index)
 
 const port  = process.env.PORT || 4000;
 

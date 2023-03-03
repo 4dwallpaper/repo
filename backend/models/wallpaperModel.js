@@ -4,23 +4,23 @@ const validator = require("validator");
 const WallpaperSchema = new mongoose.Schema({
   cat_name: {
     type: String,
-    required: true,
+    // required: true,
   },
   name:{
     type: String,
-    required: true,
+    // required: true,
   },
   price:{
     type:String,
-    required: true,
+    // required: true,
   },
   color_code:{
     type: String,
-    required: true,
+    // required: true,
   },
   meta_title:{
     type: String,
-    required: true,
+    // required: true,
   },
   file: 
     {
@@ -52,6 +52,9 @@ const WallpaperSchema = new mongoose.Schema({
   opacity:{
     type: String,
     default: "NO"
+  },
+  size: {
+    type: String
   }
 }, {timestamps: true});
 

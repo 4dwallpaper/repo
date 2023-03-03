@@ -30,7 +30,7 @@ const Product = () => {
       </div>
       <div className='col mb-3' style={{height:"150px"}}>
         <p className='fw-bold '>Thumbnail</p>
-        <img src={"http://54.248.148.252:4000/"+product.thumbnail} alt="Theme thumbnail" height="100%" className='p-2 rounded'/>
+        <img src={"http://localhost:4000/"+product.thumbnail} alt="Theme thumbnail" height="100%" className='p-2 rounded'/>
       </div>      
       <div className='col text-end button'>
         <button className="btn btn-danger me-5" type="button"  data-bs-toggle="collapse" data-bs-target={"#collapseExample"+product._id} aria-expanded="false" aria-controls={"collapseExample"+product._id}>View Details
@@ -58,7 +58,7 @@ const Product = () => {
                             </div>
                             <div className='col'>
                             <p>Download Zip</p>
-                            <a href={"http://54.248.148.252:4000/"+product.file}><FcDownload /></a>
+                            <a href={"http://localhost:4000/"+product.file}><FcDownload /></a>
                             </div>
                         </div>
                     </div>

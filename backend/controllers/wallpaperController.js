@@ -6,6 +6,7 @@ exports.create = async (req, res) => {
     let {category, name, price, color, metaTitle, purchase, model, tag} = req.body;
   let time = new Date();
   let currentTime = time.getFullYear()+"-"+ (time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+  console.log({req1: req.files})
   const wallpaper = await Wallpaper.create({
     cat_name: category,
     tag: tag,
@@ -19,6 +20,7 @@ exports.create = async (req, res) => {
     time: currentTime,
     ttl_downld: 0,
     file: req.files[0].path,
+    size: req.files[0].size,
     thumbnail: req.files[1].path,
   });
     res.status(200).json({
@@ -103,8 +105,22 @@ exports.updateDownload = async (req, res) =>{
   }
 }
 // exports.update = async(req, res) =>{
-//   const wallpaper = await Wallpaper.updateMany({price: "0"},{price: "22"});
+//   const wallpaper = await Wallpaper.insertMany(
+// );
 //   res.status(200).json({
 //     wallpaper
 //   })
 // }
+
+exports.readSingle = async (req, res) =>{
+    try{
+        let {id} = req.params;
+        const wallpaper = await Wallpaper.findOne({_id: id});
+        res.status(200).json({
+            wallpaper
+        })
+    }
+    catch(error){
+        res.status(500).json(err)
+    }
+}

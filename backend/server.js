@@ -34,7 +34,7 @@ app.use('/uploads', express.static('uploads'));
 
 const index = require("./routes/index")
 
-app.use("/", index)
+app.use("/4DApp", index)
 
 const port  = process.env.PORT || 4000;
 
